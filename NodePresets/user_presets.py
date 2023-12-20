@@ -1,0 +1,6 @@
+import nuke
+def nodePresetsStartup():
+  nuke.setUserPreset("Crop", "Letterbox UHD 2.0", {'box': '0 120 3840 2040', 'selected': 'true'})
+  nuke.setUserPreset("Merge2", "mask", {'operation': 'mask', 'selected': 'true'})
+  nuke.setUserPreset("Write", "DPX", {'channels': 'rgba', 'file': 'K:/Tower33/BA/201/Outputs/Finals/BA_201_007_010_v001.####.exr', 'colorspace': 'compositing_log', 'file_type': 'exr', 'checkHashOnRead': 'false', 'version': '71', 'in_colorspace': 'scene_linear', 'out_colorspace': 'compositing_log', 'beforeRender': "f = os.path.split(nuke.thisNode().knob('file').value())[0]; os.makedirs(f) if not os.path.exists(f) else None", 'selected': 'true', 'suffix': '.####.dpx', 'script_subfolders': '1'})
+  nuke.setUserPreset("Write", "EXR", {'channels': 'rgba', 'file': 'K:/Tower33/BA/201/Outputs/Finals/BA_201_007_010_v001.####.exr', 'colorspace': 'compositing_log', 'file_type': 'exr', 'checkHashOnRead': 'false', 'version': '71', 'in_colorspace': 'scene_linear', 'out_colorspace': 'compositing_log', 'beforeRender': "f = os.path.split(nuke.thisNode().knob('file').value())[0]; os.makedirs(f) if not os.path.exists(f) else None", 'selected': 'true', 'suffix': '.####.exr', 'script_subfolders': '1'})
