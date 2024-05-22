@@ -32,6 +32,7 @@ except Exception:
     traceback.print_exc()
 
 toolbar = nuke.toolbar('Nodes')
-AddedNodes = toolbar.addMenu('AddedNodes', icon='MENU ICON.png')
+AddedNodes = toolbar.addMenu('AE Inspired', icon='MENU ICON.png')
 
-AddedNodes.addCommand('edgeNoise', 'nuke.createNode(\'edgeNoise\')')
+AddedNodes.addCommand('Color Blend', 'nuke.createNode(\'ColorBlend\')')
+AddedNodes.addCommand('Roughen Edges', 'nuke.createNode(\'RoughenEdges\')')
