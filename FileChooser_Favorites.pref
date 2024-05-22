@@ -18,8 +18,10 @@ add_favorite_dir -image -script "NEWA 511" "NEWA 511" "" "K:/Tower33/NEWA S5/511
 add_favorite_dir -script Tower33 Tower33 "K:\Dropbox\Carlos\Documents\Input Devices\Icons\t33.ico" T:/Tower33/
 add_favorite_dir -script "GLA 107 Comps" "GLA 107 Comps" "" T:/Tower33/GLA/107/Comps/
 add_favorite_dir -script TVSS TVSS "" T:/Tower33/TVSS/102/Comps/
-add_favorite_dir -image -script -project -python -font -geo -misc -sequence Brando Brando "" "D:/Dropbox/Projects/KP VFX/Brando/"
 add_favorite_dir -image -script -project -python -font -geo -misc -sequence "Schneider Electric Spot" "Schneider Electric Spot" "" "D:/Dropbox/PROJECTS/KP VFX/Schneider Electric Spot/"
 add_favorite_dir -image ROTO ROTO "" "D:/Dropbox/PROJECTS/KP VFX/Brando/Elements/ROTO/"
+add_favorite_dir -script "Comps TF" "Comps TF" "" T:/Tower33/TF/106/Comps/
+add_favorite_dir -image -script -project -python -font -geo -misc -sequence WWB WWB "" "D:/Dropbox/Projects/KP VFX/Brando/"
+add_favorite_dir -script "TF Comps" "TF Comps" "" T:/Tower33/TF/106/Comps/
 
 # End of generated file.

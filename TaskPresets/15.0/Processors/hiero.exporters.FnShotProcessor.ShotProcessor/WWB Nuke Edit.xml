@@ -5,7 +5,7 @@
     <versionPadding valuetype="int">2</versionPadding>
     <exportTemplate valuetype="list">
         <SequenceItem valuetype="tuple">
-            <SequenceItem valuetype="str">Outputs/Finals/{shot}_{version}/{shot}_comp{_nameindex}_{version}.####.{ext}</SequenceItem>
+            <SequenceItem valuetype="str">Outputs/Finals/{shot}_{version}/{shot}_{version}.####.{ext}</SequenceItem>
             <SequenceItem valuetype="hiero.exporters.FnExternalRender.NukeRenderPreset">
                 <root tasktype="hiero.exporters.FnExternalRender.NukeRenderTask" presetname="">
                     <file_type valuetype="str">exr</file_type>
@@ -62,7 +62,7 @@
                     <enable valuetype="bool">True</enable>
                     <readPaths valuetype="list" />
                     <writePaths valuetype="list">
-                        <SequenceItem valuetype="str">Outputs/Finals/{shot}_{version}/{shot}_comp{_nameindex}_{version}.####.{ext}</SequenceItem>
+                        <SequenceItem valuetype="str">Outputs/Finals/{shot}_{version}/{shot}_{version}.####.{ext}</SequenceItem>
                     </writePaths>
                     <timelineWriteNode valuetype="str" />
                     <collateTracks valuetype="bool">True</collateTracks>
@@ -76,9 +76,9 @@
                     <collateCustomStart valuetype="bool">True</collateCustomStart>
                     <additionalNodesEnabled valuetype="bool">False</additionalNodesEnabled>
                     <additionalNodesData valuetype="list" />
-                    <method valuetype="str">Blend</method>
+                    <method valuetype="str">None</method>
                     <reformat valuetype="dict">
-                        <to_type valuetype="str">to format</to_type>
+                        <to_type valuetype="str">To Sequence Resolution</to_type>
                         <resize valuetype="str">width</resize>
                         <center valuetype="bool">True</center>
                         <filter valuetype="str">Cubic</filter>

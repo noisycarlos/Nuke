@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <layout version="1.0">
-    <window x="1294" y="-1088" w="2560" h="1057" maximized="1" screen="1">
+    <window x="-1" y="-8" w="5120" h="1417" maximized="1" screen="0">
         <splitter orientation="1">
             <split size="40"/>
             <dock id="" hideTitles="1" activePageId="Toolbar.1">
                 <page id="Toolbar.1"/>
             </dock>
-            <split size="686"/>
+            <split size="1476"/>
             <dock id="" activePageId="DAG.1" focus="true">
                 <page id="DAG.1"/>
             </dock>
-            <split size="1250" stretch="1"/>
+            <split size="2879" stretch="1"/>
             <splitter orientation="2">
-                <split size="1019"/>
+                <split size="1379"/>
                 <dock id="" activePageId="Viewer.1">
                     <page id="Viewer.1"/>
                 </dock>
             </splitter>
-            <split size="572"/>
-            <dock id="" activePageId="Properties.1">
+            <split size="713"/>
+            <dock id="" activePageId="uk.co.thefoundry.backgroundrenderview.1">
                 <page id="Properties.1"/>
                 <page id="uk.co.thefoundry.backgroundrenderview.1"/>
             </dock>

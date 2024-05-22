@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.0">
+    <window x="-1" y="-8" w="2256" h="1433" maximized="1" screen="0">
+        <splitter orientation="1">
+            <split size="1188"/>
+            <dock id="" activePageId="uk.co.thefoundry.viewer.7" focus="true">
+                <page id="uk.co.thefoundry.sequenceviewer.4"/>
+                <page id="uk.co.thefoundry.viewer.7"/>
+            </dock>
+            <split size="1064"/>
+            <splitter orientation="2">
+                <split size="696"/>
+                <dock id="" activePageId="uk.co.thefoundry.project.2">
+                    <page id="uk.co.thefoundry.project.2" layout="splitter(330,708)"/>
+                    <page id="uk.co.thefoundry.backgroundrenderview.1"/>
+                    <page id="uk.co.thefoundry.exportqueue.1"/>
+                </dock>
+                <split size="695"/>
+                <dock id="" activePageId="uk.co.thefoundry.timeline.3">
+                    <page id="uk.co.thefoundry.timeline.3" layout="splitter(171,889)"/>
+                </dock>
+            </splitter>
+        </splitter>
+    </window>
+</layout>

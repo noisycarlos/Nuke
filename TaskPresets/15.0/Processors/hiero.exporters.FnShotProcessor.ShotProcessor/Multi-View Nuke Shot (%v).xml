@@ -3,7 +3,7 @@
     <includeTags valuetype="list" />
     <versionIndex valuetype="int">1</versionIndex>
     <versionPadding valuetype="int">2</versionPadding>
-    <exportTemplate valuetype="tuple">
+    <exportTemplate valuetype="list">
         <SequenceItem valuetype="tuple">
             <SequenceItem valuetype="str">{shot}/nuke/script/{shot}_comp{_nameindex}_{version}.{ext}</SequenceItem>
             <SequenceItem valuetype="hiero.exporters.FnNukeShotExporter.NukeShotPreset">

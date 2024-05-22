@@ -10,7 +10,7 @@
                 <root tasktype="hiero.exporters.FnTranscodeExporter.TranscodeExporter" presetname="">
                     <file_type valuetype="str">mov</file_type>
                     <reformat valuetype="dict">
-                        <to_type valuetype="str">to format</to_type>
+                        <to_type valuetype="str">None</to_type>
                         <scale valuetype="float">1.0</scale>
                         <resize valuetype="str">width</resize>
                         <center valuetype="bool">True</center>
@@ -65,7 +65,8 @@
                         <mov64_write_timecode valuetype="str">true</mov64_write_timecode>
                         <mov_prores_codec_profile valuetype="str">ProRes 4:4:4:4 XQ 12-bit</mov_prores_codec_profile>
                     </mov>
-                    <colorspace valuetype="str">compositing_log</colorspace>
+                    <colorspace valuetype="str">reference</colorspace>
+                    <ocioView valuetype="str">Raw</ocioView>
                 </root>
             </SequenceItem>
         </SequenceItem>
