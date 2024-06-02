@@ -1,18 +1,25 @@
 Preferences {
  inputs 0
  name Preferences
- AutoSaveName "D:/Dropbox/Auto Saves/Nuke/\[lindex \[split \[lindex \[split \[value root.name] /] end] .] 0].nkind.autosave"
- localizationMode manual
+ AutoSaveName "L:/TempFiles/Nuke/autosave/\[lindex \[split \[lindex \[split \[value root.name] /] end] .] 0].nkind.autosave"
+ localCachePath L:/TempFiles/Nuke/localize
+ autoLocalCachePath D:/
+ LocalizationSizeLimit 200
+ LocalizationUseSourceWhenOutOfDate true
+ DiskCachePath L:/TempFiles/Nuke/compcache/
+ diskCacheGB 18.6
+ TimelineDiskCachePath L:/TempFiles/Nuke/TimelineCache
  TimelineDiskCacheLimit 25
  PaintCacheGB 20.4
  selectedGPUDeviceName "NVIDIA GeForce GTX 1080 Ti"
  DisableBlinkCache true
- platformPathRemaps ""
+ platformPathRemaps "L:/;;/run/media/carlos/WorkLinux/;D:/;-;/mnt/nfs/work/;"
  maxPanels 5
  ExpandSelection true
  defaultBufferDepth half-float
  defaultGPUForViewer true
  defaultGPUForInputs true
+ vsync_enabled true
  defaultFlipbook "Flipbook Viewer"
  addUserKnob {20 hotboxLabel l W_hotbox}
  addUserKnob {26 hotboxGeneralLabel l <b>General</b>}
