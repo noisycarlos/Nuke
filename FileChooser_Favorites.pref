@@ -4,7 +4,6 @@ add_favorite_dir Root Root root_dir /
 add_favorite_dir Current Current "" [pwd]/
 add_favorite_dir Nuke Nuke icon16 "[file dir $program_name]/"
 add_favorite_dir -geo TOWER33 TOWER33 "" E:/TOWER33/
-add_favorite_dir -image -script -project -python -misc -sequence T33 T33 "K:\Dropbox\Carlos\Documents\Input Devices\Icons\T33.ico" T:/Tower33/
 add_favorite_dir -image "NEWA S5" "NEWA S5" "" "K:/Tower33/NEWA S5/"
 add_favorite_dir -script "T90S Photos" "T90S Photos" "" "K:/Tower33/That 90s Show/Comps/Photos/"
 add_favorite_dir -script "NEWA 507" "NEWA 507" "" "K:/Tower33/NEWA S5/507/Comps/"
@@ -21,7 +20,9 @@ add_favorite_dir -script TVSS TVSS "" T:/Tower33/TVSS/102/Comps/
 add_favorite_dir -image -script -project -python -font -geo -misc -sequence "Schneider Electric Spot" "Schneider Electric Spot" "" "D:/Dropbox/PROJECTS/KP VFX/Schneider Electric Spot/"
 add_favorite_dir -image ROTO ROTO "" "D:/Dropbox/PROJECTS/KP VFX/Brando/Elements/ROTO/"
 add_favorite_dir -script "Comps TF" "Comps TF" "" T:/Tower33/TF/106/Comps/
-add_favorite_dir -image -script -project -python -font -geo -misc -sequence WWB WWB "" "D:/Dropbox/Projects/KP VFX/Brando/"
 add_favorite_dir -script "TF Comps" "TF Comps" "" T:/Tower33/TF/106/Comps/
+add_favorite_dir -image -script -project -python -font -geo -misc -sequence "Brando NFS" "Brando NFS" "" "/mnt/nfs/work/Dropbox/Projects/KP VFX/Brando/"
+add_favorite_dir -image -script -project -python -font -geo -misc -sequence Brando Brando "" "/mnt/smb/work/Dropbox/Projects/KP VFX/Brando/"
+add_favorite_dir -image -misc -sequence Deliveries Deliveries "" "/mnt/nfs/work/Dropbox/Projects/KP VFX/Brando/Outputs/Deliveries/"
 
 # End of generated file.
