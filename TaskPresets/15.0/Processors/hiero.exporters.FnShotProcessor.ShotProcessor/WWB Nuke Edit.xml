@@ -98,6 +98,6 @@
     <cutUseHandles valuetype="bool">True</cutUseHandles>
     <cutLength valuetype="bool">True</cutLength>
     <includeRetimes valuetype="bool">False</includeRetimes>
-    <startFrameIndex valuetype="int">1</startFrameIndex>
+    <startFrameIndex valuetype="int">1000</startFrameIndex>
     <startFrameSource valuetype="str">Custom</startFrameSource>
 </root>
