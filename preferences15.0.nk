@@ -1,7 +1,7 @@
 Preferences {
  inputs 0
  name Preferences
- AutoSaveName "\[getenv NUKE_TEMP_DIR]/autosave/\[lindex \[split \[lindex \[split \[value root.name] /] end] .] 0]_auto.nkind.autosave"
+ AutoSaveName "\[getenv NUKE_TEMP_DIR]/autosave/\[lindex \[split \[lindex \[split \[value root.name] /] end] .] 0]_.nkind.autosave"
  localCachePath "\[getenv NUKE_TEMP_DIR]/localized"
  autoLocalCachePath D:/
  LocalizationSizeLimit 500
