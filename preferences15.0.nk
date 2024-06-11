@@ -1,19 +1,21 @@
 Preferences {
  inputs 0
  name Preferences
- AutoSaveName "L:/TempFiles/Nuke/autosave/\[lindex \[split \[lindex \[split \[value root.name] /] end] .] 0].nkind.autosave"
- localCachePath L:/TempFiles/Nuke/localize
+ AutoSaveName "\[getenv NUKE_TEMP_DIR]/autosave/\[lindex \[split \[lindex \[split \[value root.name] /] end] .] 0]_auto.nkind.autosave"
+ localCachePath "\[getenv NUKE_TEMP_DIR]/localized"
  autoLocalCachePath D:/
- LocalizationSizeLimit 200
+ LocalizationSizeLimit 500
  LocalizationUseSourceWhenOutOfDate true
- DiskCachePath L:/TempFiles/Nuke/compcache/
- diskCacheGB 18.6
- TimelineDiskCachePath L:/TempFiles/Nuke/TimelineCache
+ freeTimelineRAMCache true
+ DiskCachePath "\[getenv NUKE_TEMP_DIR]/CompCache"
+ diskCacheGB 40
  TimelineDiskCacheLimit 25
- PaintCacheGB 20.4
- selectedGPUDeviceName "NVIDIA GeForce GTX 1080 Ti"
+ PaintCacheGB 50
+ undoLimitMB 100
+ selectedGPUDeviceName "NVIDIA GeForce RTX 4060 Ti"
  DisableBlinkCache true
- platformPathRemaps "L:/;;/run/media/carlos/WorkLinux/;D:/;-;/mnt/nfs/work/;"
+ BlinkCacheMemoryPercentage 50
+ platformPathRemaps "L:/;;[getenv NUKE_TEMP_DIR]/;D:/;-;/mnt/nfs/work/;"
  maxPanels 5
  ExpandSelection true
  defaultBufferDepth half-float
