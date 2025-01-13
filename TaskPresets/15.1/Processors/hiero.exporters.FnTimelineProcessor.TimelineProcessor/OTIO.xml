@@ -1,4 +1,4 @@
-<root tasktype="hiero.exporters.FnTimelineProcessor.TimelineProcessor" presetname="OTIO (Beta)">
+<root tasktype="hiero.exporters.FnTimelineProcessor.TimelineProcessor" presetname="OTIO">
     <versionIndex valuetype="int">1</versionIndex>
     <versionPadding valuetype="int">2</versionPadding>
     <exportTemplate valuetype="tuple">
