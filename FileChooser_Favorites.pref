@@ -24,5 +24,6 @@ add_favorite_dir -script "TF Comps" "TF Comps" "" T:/Tower33/TF/106/Comps/
 add_favorite_dir -image -script -project -python -font -geo -misc -sequence Brando Brando "" "/mnt/nfs/work/Dropbox/Projects/KP VFX/Brando/"
 add_favorite_dir -image -misc -sequence Deliveries Deliveries "" "/mnt/nfs/work/Dropbox/Projects/KP VFX/Brando/Outputs/Deliveries/"
 add_favorite_dir -image ROTO ROTO "" "/mnt/nfs/work/Dropbox/Projects/KP VFX/Brando/Elements/ROTO/"
+add_favorite_dir -image -script -project -python -font -geo -misc -sequence Blackout Blackout "" /kpnas/vfx/KPVFX/Blackout/
 
 # End of generated file.

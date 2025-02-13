@@ -57,6 +57,9 @@
                     </views>
                     <dpx valuetype="dict">
                         <datatype valuetype="str">10 bit</datatype>
+                        <fill valuetype="bool">False</fill>
+                        <bigEndian valuetype="bool">True</bigEndian>
+                        <transfer valuetype="str">(auto detect)</transfer>
                     </dpx>
                     <writeNodeName valuetype="str">Write_{ext}</writeNodeName>
                     <burninDataEnabled valuetype="bool">False</burninDataEnabled>

@@ -1,0 +1,165 @@
+Group {
+ name Liquify1
+ tile_color 0xa479aaff
+ selected true
+ xpos -706
+ ypos -112
+ addUserKnob {20 Liquify}
+ addUserKnob {14 warpAmount l "warp amount" R 0 100}
+ warpAmount 1
+ addUserKnob {41 size l smooth T Blur1.size}
+ addUserKnob {7 smear}
+ addUserKnob {26 ""}
+ addUserKnob {41 toolbar_opacity l opacity T RotoPaint1.toolbar_opacity}
+ addUserKnob {41 toolbar_brush_size l size -STARTLINE T RotoPaint1.toolbar_brush_size}
+ addUserKnob {41 toolbar_brush_hardness l hardness -STARTLINE T RotoPaint1.toolbar_brush_hardness}
+ addUserKnob {20 paint l "paint controls" t "Paint tools that edit the ST map driving the liquify warp.\n\nYou probably mostly want to use the smear brush." n 1}
+ addUserKnob {41 toolbox l "" t "Paint tools that edit the ST map driving the liquify warp.\n\nYou probably mostly want to use the smear brush." +STARTLINE T RotoPaint1.toolbox}
+ addUserKnob {41 curves l "" t "Paint tools that edit the ST map driving the liquify warp.\n\nYou probably mostly want to use the smear brush." -STARTLINE T RotoPaint1.curves}
+ addUserKnob {20 endGroup n -1}
+ addUserKnob {26 ""}
+ addUserKnob {26 info l " " T "v1.2  -  Mitchell Kehn  -  15 July 2019"}
+ addUserKnob {20 "" n -5}
+}
+ Input {
+  inputs 0
+  name Input
+  xpos -620
+  ypos 326
+ }
+ Dot {
+  name Dot10
+  xpos -586
+  ypos 413
+ }
+set N7677bc00 [stack 0]
+ Dot {
+  name Dot1
+  xpos -422
+  ypos 413
+ }
+ Remove {
+  name Remove1
+  xpos -456
+  ypos 455
+ }
+ Expression {
+  expr0 x/width
+  expr1 y/height
+  name Expression1
+  xpos -456
+  ypos 519
+ }
+set N7677ac00 [stack 0]
+ Dot {
+  name Dot11
+  xpos -327
+  ypos 560
+ }
+push $N7677ac00
+ RotoPaint {
+  curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 2097664}
+    {t x44b40000 x444a8000}
+    {a pt1x 0 pt1y 0 pt2x 0 pt2y 0 pt3x 0 pt3y 0 pt4x 0 pt4y 0 ptex00 0 ptex01 0 ptex02 0 ptex03 0 ptex10 0 ptex11 0 ptex12 0 ptex13 0 ptex20 0 ptex21 0 ptex22 0 ptex23 0 ptex30 0 ptex31 0 ptex32 0 ptex33 0 ptof1x 0 ptof1y 0 ptof2x 0 ptof2y 0 ptof3x 0 ptof3y 0 ptof4x 0 ptof4y 0 pterr 0 ptrefset 0 ptmot x40800000 ptref 0}}}}}
+  toolbox {selectAll {
+  { selectAll bs 20 src 1 str 1 ssx 1 ssy 1 sf 1 ep1 1 }
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 tt 17 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear bs 20 src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 ltn 117 ltm 117 tt 25 }
+} }
+  toolbar_brush_size 20
+  toolbar_brush_hardness 0.200000003
+  toolbar_lifetime_type single
+  toolbar_lifetime_start 117
+  toolbar_lifetime_end 117
+  toolbar_effect_parameter1 1
+  toolbar_paint_source fg
+  toolbar_source_transform_scale {1 1}
+  toolbar_source_transform_center {2268 945}
+  colorOverlay {0 0 0 0}
+  paint_source foreground
+  lifetime_type "all frames"
+  view {}
+  motionblur_on true
+  motionblur_shutter_offset_type centred
+  brush_type smear
+  brush_size 68
+  brush_spacing 0.05000000075
+  brush_hardness 0.200000003
+  effect_parameter1 1
+  name RotoPaint1
+  xpos -456
+  ypos 557
+ }
+ Merge2 {
+  inputs 2
+  operation from
+  name Merge15
+  xpos -456
+  ypos 597
+ }
+ Blur {
+  name Blur1
+  xpos -456
+  ypos 653
+ }
+ Dot {
+  name Dot2
+  xpos -422
+  ypos 711
+ }
+push $N7677bc00
+add_layer {liquify liquify.u liquify.v}
+ Copy {
+  inputs 2
+  from0 rgba.red
+  to0 liquify.u
+  from1 rgba.green
+  to1 liquify.v
+  name Copy2
+  xpos -620
+  ypos 694
+ }
+ IDistort {
+  uv liquify
+  uv_scale {{"1000 * parent.warpAmount"} {"1000 * parent.warpAmount"}}
+  name IDistort1
+  xpos -620
+  ypos 809
+ }
+ VectorBlur2 {
+  uv liquify
+  scale {{"1000 * parent.smear"}}
+  name VectorBlur1
+  xpos -620
+  ypos 847
+  disable {{"parent.smear == 0"}}
+ }
+ Remove {
+  channels liquify
+  name Remove2
+  xpos -620
+  ypos 935
+ }
+ Output {
+  name Output1
+  xpos -620
+  ypos 1023
+ }
+end_group

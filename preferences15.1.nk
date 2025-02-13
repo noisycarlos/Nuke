@@ -16,8 +16,7 @@ selectedGPUDeviceName "no GPU available"
 DisableBlinkCache true
 BlinkCacheMemoryPercentage 50
 platformPathRemaps "D:/;/Volumes/MaxDrive/;/kpnas/vfx/;"
-maxPanels 5
-ExpandSelection true
+maxPanels 1
 DfltBezAutokey false
 defaultBufferDepth half-float
 defaultGPUForViewer true
