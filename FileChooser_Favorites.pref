@@ -12,7 +12,7 @@ add_favorite_dir -script ABC107 ABC107 "" K:/Tower33/ABC/107/
 add_favorite_dir -script "Best Headset for Biking" "Best Headset for Biking" "" "K:/Dropbox/Projects/YouTube/Episodes/SB001 - Best Headset for Biking/"
 add_favorite_dir -script .nuke .nuke "" C:/Users/Carlos/.nuke/
 add_favorite_dir -image -script -project "NHIE 410" "NHIE 410" "" "K:/Tower33/NHIE S4/410/"
-add_favorite_dir -image -script -project -python -font -geo -misc -sequence "KP VFX" "KP VFX" "" "K:/Dropbox/Projects/KP VFX/"
+add_favorite_dir -image -script -project -python -font -geo -misc -sequence KPVFX KPVFX "" /kpnas/vfx/KPVFX/
 add_favorite_dir -image -script "NEWA 511" "NEWA 511" "" "K:/Tower33/NEWA S5/511/"
 add_favorite_dir -script Tower33 Tower33 "K:\Dropbox\Carlos\Documents\Input Devices\Icons\t33.ico" T:/Tower33/
 add_favorite_dir -script "GLA 107 Comps" "GLA 107 Comps" "" T:/Tower33/GLA/107/Comps/
@@ -25,5 +25,6 @@ add_favorite_dir -image -script -project -python -font -geo -misc -sequence Bran
 add_favorite_dir -image -misc -sequence Deliveries Deliveries "" "/mnt/nfs/work/Dropbox/Projects/KP VFX/Brando/Outputs/Deliveries/"
 add_favorite_dir -image ROTO ROTO "" "/mnt/nfs/work/Dropbox/Projects/KP VFX/Brando/Elements/ROTO/"
 add_favorite_dir -image -script -project -python -font -geo -misc -sequence Blackout Blackout "" /kpnas/vfx/KPVFX/Blackout/
+add_favorite_dir -image -script -project -python -font -geo -misc -sequence "The Keeper" "The Keeper" "" "/kpnas/vfx/KPVFX/The Keeper/"
 
 # End of generated file.

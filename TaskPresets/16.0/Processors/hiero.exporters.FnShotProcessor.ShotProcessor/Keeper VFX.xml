@@ -1,0 +1,116 @@
+<root tasktype="hiero.exporters.FnShotProcessor.ShotProcessor" presetname="Keeper VFX">
+    <excludeTags valuetype="list"/>
+    <includeTags valuetype="list"/>
+    <versionIndex valuetype="int">1</versionIndex>
+    <versionPadding valuetype="int">2</versionPadding>
+    <exportTemplate valuetype="list">
+        <SequenceItem valuetype="tuple">
+            <SequenceItem valuetype="str">Comps/{shot}/script/</SequenceItem>
+            <SequenceItem valuetype="hiero.core.FnExporterBase.FolderTaskPreset">
+                <root tasktype="hiero.core.FnExporterBase.FolderTask" presetname="folder"/>
+            </SequenceItem>
+        </SequenceItem>
+        <SequenceItem valuetype="tuple">
+            <SequenceItem valuetype="str">Comps/{shot}/{shot}_comp{_nameindex}_{version}.{ext}</SequenceItem>
+            <SequenceItem valuetype="hiero.exporters.FnNukeShotExporter.NukeShotPreset">
+                <root tasktype="hiero.exporters.FnNukeShotExporter.NukeShotExporter" presetname="">
+                    <enable valuetype="bool">True</enable>
+                    <readPaths valuetype="list"/>
+                    <writePaths valuetype="list">
+                        <SequenceItem valuetype="str">Comps/{shot}/{shot}_comp{_nameindex}_{version}.####.{ext}</SequenceItem>
+                    </writePaths>
+                    <timelineWriteNode valuetype="str">Comps/{shot}/{shot}_comp{_nameindex}_{version}.####.{ext}</timelineWriteNode>
+                    <collateTracks valuetype="bool">False</collateTracks>
+                    <collateShotNames valuetype="bool">False</collateShotNames>
+                    <annotationsPreCompPaths valuetype="list">
+                        <SequenceItem valuetype="str">{shot}_comp_annotations_{version}.{ext}</SequenceItem>
+                    </annotationsPreCompPaths>
+                    <includeAnnotations valuetype="bool">False</includeAnnotations>
+                    <showAnnotations valuetype="bool">True</showAnnotations>
+                    <includeEffects valuetype="bool">True</includeEffects>
+                    <connectTracks valuetype="bool">False</connectTracks>
+                    <collateSequence valuetype="bool">False</collateSequence>
+                    <collateCustomStart valuetype="bool">True</collateCustomStart>
+                    <additionalNodesEnabled valuetype="bool">False</additionalNodesEnabled>
+                    <additionalNodesData valuetype="list"/>
+                    <method valuetype="str">Blend</method>
+                    <reformat valuetype="dict">
+                        <to_type valuetype="str">Plate Resolution</to_type>
+                        <resize valuetype="str">width</resize>
+                        <center valuetype="bool">True</center>
+                        <filter valuetype="str">Cubic</filter>
+                    </reformat>
+                    <postProcessScript valuetype="bool">True</postProcessScript>
+                    <useRelativePaths valuetype="bool">False</useRelativePaths>
+                </root>
+            </SequenceItem>
+        </SequenceItem>
+        <SequenceItem valuetype="tuple">
+            <SequenceItem valuetype="str">Comps/{shot}/{shot}_comp{_nameindex}_{version}.####.{ext}</SequenceItem>
+            <SequenceItem valuetype="hiero.exporters.FnExternalRender.NukeRenderPreset">
+                <root tasktype="hiero.exporters.FnExternalRender.NukeRenderTask" presetname="">
+                    <file_type valuetype="str">exr</file_type>
+                    <reformat valuetype="dict">
+                        <to_type valuetype="str">None</to_type>
+                        <scale valuetype="float">1.0</scale>
+                        <resize valuetype="str">width</resize>
+                        <center valuetype="bool">True</center>
+                        <filter valuetype="str">Cubic</filter>
+                    </reformat>
+                    <channels valuetype="str">all</channels>
+                    <views valuetype="list">
+                        <SequenceItem valuetype="str">all</SequenceItem>
+                    </views>
+                    <dpx valuetype="dict">
+                        <datatype valuetype="str">10 bit</datatype>
+                        <fill valuetype="bool">False</fill>
+                        <bigEndian valuetype="bool">True</bigEndian>
+                        <transfer valuetype="str">(auto detect)</transfer>
+                    </dpx>
+                    <writeNodeName valuetype="str">Write_{ext}</writeNodeName>
+                    <burninDataEnabled valuetype="bool">False</burninDataEnabled>
+                    <burninData valuetype="dict">
+                        <burnIn_textSize valuetype="NoneType">None</burnIn_textSize>
+                        <burnIn_padding valuetype="NoneType">None</burnIn_padding>
+                        <burnIn_font valuetype="NoneType">None</burnIn_font>
+                        <burnIn_topLeft valuetype="NoneType">None</burnIn_topLeft>
+                        <burnIn_topMiddle valuetype="NoneType">None</burnIn_topMiddle>
+                        <burnIn_topRight valuetype="NoneType">None</burnIn_topRight>
+                        <burnIn_bottomLeft valuetype="NoneType">None</burnIn_bottomLeft>
+                        <burnIn_bottomMiddle valuetype="NoneType">None</burnIn_bottomMiddle>
+                        <burnIn_bottomRight valuetype="NoneType">None</burnIn_bottomRight>
+                    </burninData>
+                    <create_directories valuetype="bool">True</create_directories>
+                    <exr valuetype="dict">
+                        <datatype valuetype="str">16 bit half</datatype>
+                        <compression valuetype="str">Zip (1 scanline)</compression>
+                        <dw_compression_level valuetype="float">45.0</dw_compression_level>
+                        <write_ACES_compliant_EXR valuetype="bool">False</write_ACES_compliant_EXR>
+                        <metadata valuetype="str">default metadata</metadata>
+                        <interleave valuetype="str">channels</interleave>
+                        <noprefix valuetype="bool">False</noprefix>
+                        <standard_layer_name_format valuetype="bool">False</standard_layer_name_format>
+                        <write_full_layer_names valuetype="bool">False</write_full_layer_names>
+                        <truncateChannelNames valuetype="bool">False</truncateChannelNames>
+                        <write_tiles valuetype="bool">False</write_tiles>
+                        <tile_width valuetype="int">32</tile_width>
+                        <tile_height valuetype="int">32</tile_height>
+                    </exr>
+                </root>
+            </SequenceItem>
+        </SequenceItem>
+        <SequenceItem valuetype="tuple">
+            <SequenceItem valuetype="str">Outputs/</SequenceItem>
+            <SequenceItem valuetype="hiero.core.FnExporterBase.FolderTaskPreset">
+                <root tasktype="hiero.core.FnExporterBase.FolderTask" presetname="folder"/>
+            </SequenceItem>
+        </SequenceItem>
+    </exportTemplate>
+    <exportRoot valuetype="str">{projectroot}</exportRoot>
+    <cutHandles valuetype="int">12</cutHandles>
+    <cutUseHandles valuetype="bool">False</cutUseHandles>
+    <cutLength valuetype="bool">True</cutLength>
+    <includeRetimes valuetype="bool">False</includeRetimes>
+    <startFrameIndex valuetype="int">1001</startFrameIndex>
+    <startFrameSource valuetype="str">Source</startFrameSource>
+</root>
