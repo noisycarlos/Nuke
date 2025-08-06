@@ -12,16 +12,17 @@
             </dock>
             <split size="2040" stretch="1"/>
             <splitter orientation="2">
-                <split size="1332"/>
-                <dock id="" activePageId="Viewer.1">
+                <split size="1333"/>
+                <dock id="" activePageId="Viewer.1" focus="true">
                     <page id="Viewer.1"/>
                     <page id="uk.co.thefoundry.backgroundrenderview.1"/>
+                    <page id="uk.co.thefoundry.scripteditor.2"/>
                 </dock>
             </splitter>
             <split size="540"/>
             <splitter orientation="2">
-                <split size="664"/>
-                <dock id="" activePageId="Properties.1" focus="true">
+                <split size="665"/>
+                <dock id="" activePageId="Properties.1">
                     <page id="Properties.1"/>
                 </dock>
                 <split size="664"/>
