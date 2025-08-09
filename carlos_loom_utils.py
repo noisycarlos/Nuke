@@ -16,7 +16,7 @@ def open_loom_comp():
     p.addEnumerationPulldown("Project", " ".join(escaped_projects))
     p.addSingleLineInput("Sequence (sq)", "")
     p.addSingleLineInput("Shot", "")
-    p.addSingleLineInput("Version (e.g. 01)", "1")
+    p.addSingleLineInput("Version (e.g. 01)", "")
     p.addSingleLineInput("Artist", "CA")
 
     # Show the panel and get values
@@ -26,18 +26,27 @@ def open_loom_comp():
     project = p.value("Project")
     sq = p.value("Sequence (sq)").zfill(4)
     shot = p.value("Shot").zfill(4)
-    version = p.value("Version (e.g. 01)").zfill(3)  # Zero-pad version
+    version = p.value("Version (e.g. 01)")
     artist = p.value("Artist")
     shot_name = f"{comp_names[project]}_Sq{sq}_Sh{shot}"
 
-    # Construct path
-    file_path = f"v:/{project}/050_Production/020_Comps/Sq{sq}/{shot_name}/020_Projects/060_FinalComp/{shot_name}_v{version}_{artist}.nk"
-    #V:/POS-30608-Love_Language/050_Production/020_Comps/Sq0069/LOV_Sq0069_Sh0007/020_Projects/060_FinalComp/LOV_Sq0069_Sh0007_v001_CA.nk
+    if version == "":
+        for test_ver in  reversed(range(10)):
+            ver = str(test_ver).zfill(3)
+            file_path = f"v:/{project}/050_Production/020_Comps/Sq{sq}/{shot_name}/020_Projects/060_FinalComp/{shot_name}_v{ver}_{artist}.nk"   
+            if os.path.exists(file_path):
+                switch_open_project(file_path)
+                return
+    else:
+        version = str(version).zfill(3)
+        file_path = f"v:/{project}/050_Production/020_Comps/Sq{sq}/{shot_name}/020_Projects/060_FinalComp/{shot_name}_v{version}_{artist}.nk"
+        if os.path.exists(file_path):
+            switch_open_project(file_path)
+            return
+        else:
+            nuke.message(f"File not found:\n{file_path}")
 
-    if not os.path.exists(file_path):
-        nuke.message(f"File not found:\n{file_path}")
-        return
-
+def switch_open_project(file_path):
     if nuke.root().modified():
         if nuke.ask("Save current script before closing?"):
             nukescripts.scriptSave()
