@@ -1,6 +1,7 @@
 import nuke
 import os
 import nukescripts
+import glob
 
 def open_loom_comp():
     # List of projects - modify this as needed
@@ -16,8 +17,8 @@ def open_loom_comp():
     p.addEnumerationPulldown("Project", " ".join(escaped_projects))
     p.addSingleLineInput("Sequence (sq)", "")
     p.addSingleLineInput("Shot", "")
-    p.addSingleLineInput("Version (e.g. 01)", "")
-    p.addSingleLineInput("Artist", "CA")
+    p.addSingleLineInput("Version", "")
+    p.addSingleLineInput("Artist", "")
 
     # Show the panel and get values
     if not p.show():
@@ -26,14 +27,19 @@ def open_loom_comp():
     project = p.value("Project")
     sq = p.value("Sequence (sq)").zfill(4)
     shot = p.value("Shot").zfill(4)
-    version = p.value("Version (e.g. 01)")
+    version = p.value("Version")
     artist = p.value("Artist")
     shot_name = f"{comp_names[project]}_Sq{sq}_Sh{shot}"
 
-    if version == "":
+    if version == "" and artist=="":
+        file_path = get_latest_comp(project, sq, shot_name)
+        if file_path is not None:
+            switch_open_project(file_path)
+            return
+    elif version == "":
         for test_ver in  reversed(range(10)):
             ver = str(test_ver).zfill(3)
-            file_path = f"v:/{project}/050_Production/020_Comps/Sq{sq}/{shot_name}/020_Projects/060_FinalComp/{shot_name}_v{ver}_{artist}.nk"   
+            file_path = f"v:/{project}/050_Productino/020_Comps/Sq{sq}/{shot_name}/020_Projects/060_FinalComp/{shot_name}_v{ver}_{artist}.nk"   
             if os.path.exists(file_path):
                 switch_open_project(file_path)
                 return
@@ -45,6 +51,18 @@ def open_loom_comp():
             return
         else:
             nuke.message(f"File not found:\n{file_path}")
+
+
+def get_latest_comp(project, sq, shot_name):
+    search_dir= f"v:/{project}/050_Production/020_Comps/Sq{sq}/{shot_name}/020_Projects/060_FinalComp"
+    file_pattern = f"{shot_name}_v???_??.nk"
+    pattern = os.path.join(search_dir, file_pattern)
+    print("Pattern:  " + pattern)
+    matching_files = glob.glob(pattern)
+    matching_files.sort(reverse=True)
+    if(not matching_files):
+        return None
+    return matching_files[0]
 
 def switch_open_project(file_path):
     if nuke.root().modified():
