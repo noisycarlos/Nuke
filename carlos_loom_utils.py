@@ -3,14 +3,19 @@ import os
 import nukescripts
 import glob
 
+# Add more projects here 
+PROJECT_COMP_NAMES = {"POS-30608-Love_Language":"LOV",
+              "POS-30642-Bucking_Fastard":"BFA",
+              "POS-30590-Sleeping_Trees":"SLT",
+              "POS-30633-Lolavie - DC":"LOL",
+              "POS-30633-Lolavie":"LOL"  }
+
+# On MacOS change to /Volumes/vfx 
+VFX_PATH = "v:"
+
 def open_loom_comp():
-    # List of projects - modify this as needed
-    #projects = ["POS-30608-Love_Language", "POS-30633-Lolavie - DC", "POS-30633-Lolavie"]
-    comp_names = {"POS-30608-Love_Language":"LOV",
-                  "POS-30633-Lolavie - DC":"LOL",
-                  "POS-30633-Lolavie":"LOL"  }
     
-    escaped_projects = ['"{}"'.format(p) for p in comp_names.keys()]
+    escaped_projects = ['"{}"'.format(p) for p in PROJECT_COMP_NAMES.keys()]
 
     # Create a dropdown panel
     p = nuke.Panel("Open New Project")
@@ -29,7 +34,7 @@ def open_loom_comp():
     shot = p.value("Shot").zfill(4)
     version = p.value("Version")
     artist = p.value("Artist")
-    shot_name = f"{comp_names[project]}_Sq{sq}_Sh{shot}"
+    shot_name = f"{PROJECT_COMP_NAMES[project]}_Sq{sq}_Sh{shot}"
 
     file_path = get_latest_comp(project, sq, shot_name, version, artist)
     if file_path is not None:
@@ -38,7 +43,7 @@ def open_loom_comp():
     nuke.message(f"File not found:\n{file_path}")
 
 def get_latest_comp(project, sq, shot_name, version="", artist=""):
-    search_dir= f"v:/{project}/050_Production/020_Comps/Sq{sq}/{shot_name}/020_Projects/060_FinalComp"
+    search_dir= f"{VFX_PATH}/{project}/050_Production/020_Comps/Sq{sq}/{shot_name}/020_Projects/060_FinalComp"
 
     if version == "":
         version = "???"
