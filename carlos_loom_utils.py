@@ -31,31 +31,26 @@ def open_loom_comp():
     artist = p.value("Artist")
     shot_name = f"{comp_names[project]}_Sq{sq}_Sh{shot}"
 
-    if version == "" and artist=="":
-        file_path = get_latest_comp(project, sq, shot_name)
-        if file_path is not None:
-            switch_open_project(file_path)
-            return
-    elif version == "":
-        for test_ver in  reversed(range(10)):
-            ver = str(test_ver).zfill(3)
-            file_path = f"v:/{project}/050_Productino/020_Comps/Sq{sq}/{shot_name}/020_Projects/060_FinalComp/{shot_name}_v{ver}_{artist}.nk"   
-            if os.path.exists(file_path):
-                switch_open_project(file_path)
-                return
+    file_path = get_latest_comp(project, sq, shot_name, version, artist)
+    if file_path is not None:
+        switch_open_project(file_path)
+        return
+    nuke.message(f"File not found:\n{file_path}")
+
+def get_latest_comp(project, sq, shot_name, version="", artist=""):
+    search_dir= f"v:/{project}/050_Production/020_Comps/Sq{sq}/{shot_name}/020_Projects/060_FinalComp"
+
+    if version == "":
+        version = "???"
     else:
         version = str(version).zfill(3)
-        file_path = f"v:/{project}/050_Production/020_Comps/Sq{sq}/{shot_name}/020_Projects/060_FinalComp/{shot_name}_v{version}_{artist}.nk"
-        if os.path.exists(file_path):
-            switch_open_project(file_path)
-            return
-        else:
-            nuke.message(f"File not found:\n{file_path}")
 
+    if artist == "":
+        artist = "??"
+    else:
+        artist = artist.upper()
 
-def get_latest_comp(project, sq, shot_name):
-    search_dir= f"v:/{project}/050_Production/020_Comps/Sq{sq}/{shot_name}/020_Projects/060_FinalComp"
-    file_pattern = f"{shot_name}_v???_??.nk"
+    file_pattern = f"{shot_name}_v{version}_{artist}.nk"
     pattern = os.path.join(search_dir, file_pattern)
     print("Pattern:  " + pattern)
     matching_files = glob.glob(pattern)
@@ -109,4 +104,3 @@ def create_read_from_write():
     read_node.setXpos(write_node.xpos())
     read_node.setYpos(write_node.ypos() + 100)
 
-#open_new_project()
